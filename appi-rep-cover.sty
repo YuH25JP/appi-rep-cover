@@ -1,0 +1,51 @@
+\usepackage{array}
+
+\def\id#1{\def\@id{#1}} % 実験整理番号
+\def\exptheme#1{\def\@exptheme{#1}} % 実験テーマ
+\def\teacher#1{\def\@teacher{#1}} % 担当教員名
+\def\name#1{\def\@name{#1}} % 実験者氏名
+\def\coexperimenters#1{\def\@coexperimenters{#1}} % 共同実験者
+\def\youbikumi#1{\def\@youbikumi{#1}} % 曜日組
+\def\jikkenbi#1{\def\@jikkenbi{#1}} % 実験日
+\def\jikkenkai#1{\def\@jikkenkai{#1}} % 実験回
+\def\@maketitle{
+    \thispagestyle{empty}
+    \begin{center}
+        {\LARGE \textsf{\@title} \par}
+    \end{center}
+    \rightline{2023年度}
+    \renewcommand{\arraystretch}{1.5}
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|w{c}{35mm}|w{c}{20mm}|w{c}{20mm}|w{c}{30mm}|}
+            \hline
+            \textgt{実験テーマ} & \multicolumn{3}{c|}{\@exptheme} \cr
+            \hline
+            \textgt{担当教員名} & \multicolumn{3}{c|}{\@teacher} \cr
+            \hline
+            \textgt{実験整理番号} & \@id & \textgt{実験者氏名} & \@name \cr
+            \hline
+            \textgt{共同実験者氏名} & \multicolumn{3}{c|}{\@coexperimenters} \cr
+            \hline
+            \textgt{曜日組} & \@youbikumi & \textgt{実験日} & \@jikkenbi \cr
+            \hline
+            \textgt{実験回} & \@jikkenkai & \multicolumn{1}{c|}{\textgt{報告書提出日}} & \@date \cr
+            \hline
+        \end{tabular}
+    \end{table}
+    \renewcommand{\arraystretch}{1.0}
+    \newpage
+    \setcounter{page}{1}
+}
+
+% デフォルトの値
+\title{物理情報工学実験CD報告書}
+\id{}
+\exptheme{}
+\teacher{}
+\name{}
+\coexperimenters{}
+\youbikumi{}
+\jikkenbi{}
+\jikkenkai{}
+\date{\today}
