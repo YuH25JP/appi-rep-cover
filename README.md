@@ -10,8 +10,29 @@
 
 1. `appi-rep-cover.sty`を自身のパソコンにダウンロード
 2. ダウンロードした`appi-rep-cover.sty`を`~/texmf/tex/latex/appi-rep-cover`に移動
-3. `mktexlsr`コマンドを実行
+3. `mktexlsr`コマンドを実行(管理者権限が必要と言われたら`sudo mktexlsr`で実行)
 4. `kpsewhich appi-rep-cover.sty`を実行して，texliveが`appi-repcover.sty`を認識していることを確認
+
+### 実行例
+```bash
+$ mkdir -p ~/texmf/tex/latex/appi-rep-cover
+$ cd ~/texmf/tex/latex/appi-rep-cover
+$ wget https://raw.githubusercontent.com/YuH25JP/appi-rep-cover/main/appi-rep-cover.sty
+$ mktexlsr
+$ kpsewhich appi-rep-cover.sty
+```
+
+最後の`kpsewhich`で
+```
+/home/ユーザー名/texmf/tex/latex/appi-rep-cover/appi-rep-cover.sty
+```
+みたいな出力が出たら成功です．
+
+### ちなみに...
+
+.styファイルを置くことのできる場所はほかにもあります．下記のリンクを参照してください．
+
+[LaTeX入門/各種パッケージの利用 - TeX Wiki](https://texwiki.texjp.org/?LaTeX%E5%85%A5%E9%96%80%2F%E5%90%84%E7%A8%AE%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8%E3%81%AE%E5%88%A9%E7%94%A8#n18c984a)
 
 ## 使い方
 
